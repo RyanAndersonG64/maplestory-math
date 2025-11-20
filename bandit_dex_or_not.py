@@ -32,3 +32,12 @@ print(f"dexless double stab damage: {int(double_stab_damage[0])}, normal double 
 print(f"dexless savage blow damage: {int(savage_blow_damage[0])}, normal savage blow damage: {int(savage_blow_damage[1])}")
 print(f"dexless double stab DPS: {int(double_stab_damage[0] / attack_speed_modifier[attack_speed[0]])}, normal double stab DPS: {int(double_stab_damage[1] / attack_speed_modifier[attack_speed[1]])}")
 print(f"dexless savage blow DPS: {int(savage_blow_damage[0] / attack_speed_modifier[attack_speed[0]])}, normal savage blow DPS: {int(savage_blow_damage[1] / attack_speed_modifier[attack_speed[1]])}")
+
+# Even without Maple weapons, dexless is clearly better on Fantasia as long as the player can
+# get their hands on a Plastic Bottle, Diamond Dagger, or Liu Bei Dagger, all of which are rare
+
+# With a Plastic Bottle, dexless wins until level 70; start looking for dex gear in time to equip a Kandine
+# With a Diamond Dagger, dexless wins until level 80; start looking for dex gear in time to equip a Dragon Tail
+# With a Liu Bei Dagger, dexless wins until level 100; start looking for dex gear in time to equip a Blood Dagger (or
+#   maybe wait for a Dragon Kreda as the difference is small enough at 100 that trying to scroll a strong Blood Dagger
+#   may not be worth the time)
