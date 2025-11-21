@@ -36,6 +36,7 @@ print(f"dexless savage blow DPS: {int(savage_blow_damage[0] / attack_speed_modif
 # Even without Maple weapons, dexless is clearly better on Fantasia as long as the player can
 # get their hands on a Plastic Bottle, Diamond Dagger, or Liu Bei Dagger, all of which are rare
 
+# Without the below rare daggers, dexless with a Korean fan loses at level 60 (but is close enough to remain viable until level 70)
 # With a Plastic Bottle, dexless wins until level 70; start looking for dex gear in time to equip a Kandine
 # With a Diamond Dagger, dexless wins until level 80; start looking for dex gear in time to equip a Dragon Tail
 # With a Liu Bei Dagger, dexless wins until level 100; start looking for dex gear in time to equip a Blood Dagger (or

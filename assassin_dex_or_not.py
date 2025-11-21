@@ -24,22 +24,34 @@ attack_speed = [int(input("Enter dexless attack speed: ")), int(input("Enter low
 
 attack_speed_modifier = [0, 0, .63, .69, .72, .78, .87]
 
-base_damage = [0, 0, 0]
-double_shot_damage = [0, 0, 0]
+lucky_seven_base_damage = [0, 0, 0]
+lucky_seven_damage = [0, 0, 0]
 one_crit_damage = [0, 0, 0]
 two_crit_damage = [0, 0, 0]
-average_double_shot_damage = [0, 0, 0]
+average_lucky_seven_damage = [0, 0, 0]
 
 for i in range(len(dex)):
-    double_shot_damage[i-1] = base_damage[i-1] * 2.6
-    one_crit_damage[i-1] = base_damage[i-1] * 3.6
-    two_crit_damage[i-1] = base_damage[i-1] * 4.6
-    average_double_shot_damage[i-1] = (double_shot_damage[i-1] + 2 * one_crit_damage[i-1] + two_crit_damage[i-1]) / 4
+    lucky_seven_base_damage[i-1] = int((luk[i-1] * 5 * weapon_attack[i-1] / 100) * 1.5)
+    lucky_seven_damage[i-1] = lucky_seven_base_damage[i-1] * 2
+
+    if level >= 80:
+        lucky_seven_damage[i-1] = lucky_seven_damage[i-1] * 1.5
+
+    one_crit_damage[i-1] = lucky_seven_damage[i-1] * 3
+    two_crit_damage[i-1] = lucky_seven_damage[i-1] * 4
+    average_lucky_seven_damage[i-1] = (lucky_seven_damage[i-1] + 2 * one_crit_damage[i-1] + two_crit_damage[i-1]) / 4
 
 # print results rounded down to nearest integer
-print(f"strless base damage: {int(base_damage[0])}, low str base damage: {int(base_damage[1])}, normal str base damage: {int(base_damage[2])}")
-print(f"strless double shot damage: {int(double_shot_damage[0])}, low str double shot damage: {int(double_shot_damage[1])}, normal str double shot damage: {int(double_shot_damage[2])}")
-print(f"strless one crit damage: {int(one_crit_damage[0])}, low str one crit damage: {int(one_crit_damage[1])}, normal str one crit damage: {int(one_crit_damage[2])}")
-print(f"strless two crit damage: {int(two_crit_damage[0])}, low str two crit damage: {int(two_crit_damage[1])}, normal str two crit damage: {int(two_crit_damage[2])}")
-print(f"strless average double shot damage: {int(average_double_shot_damage[0])}, low str average double shot damage: {int(average_double_shot_damage[1])}, normal str average double shot damage: {int(average_double_shot_damage[2])}")
-print(f"strless DPS: {int(average_double_shot_damage[0] / attack_speed_modifier[attack_speed[0]])}, low str DPS: {int(average_double_shot_damage[1] / attack_speed_modifier[attack_speed[1]])}, normal str DPS: {int(average_double_shot_damage[2] / attack_speed_modifier[attack_speed[2]])}")
+print(f"dexless lucky seven base damage: {int(lucky_seven_base_damage[0])}, low dex lucky seven base damage: {int(lucky_seven_base_damage[1])}, normal dex lucky seven base damage: {int(lucky_seven_base_damage[2])}")
+print(f"dexless lucky seven damage: {int(lucky_seven_damage[0])}, low dex lucky seven damage: {int(lucky_seven_damage[1])}, normal dex lucky seven damage: {int(lucky_seven_damage[2])}")
+print(f"dexless one crit damage: {int(one_crit_damage[0])}, low dex one crit damage: {int(one_crit_damage[1])}, normal dex one crit damage: {int(one_crit_damage[2])}")
+print(f"dexless two crit damage: {int(two_crit_damage[0])}, low dex two crit damage: {int(two_crit_damage[1])}, normal dex two crit damage: {int(two_crit_damage[2])}")
+print(f"dexless average lucky seven damage: {int(average_lucky_seven_damage[0])}, low dex average lucky seven damage: {int(average_lucky_seven_damage[1])}, normal dex average lucky seven damage: {int(average_lucky_seven_damage[2])}")
+print(f"dexless DPS: {int(average_lucky_seven_damage[0] / attack_speed_modifier[attack_speed[0]])}, low dex DPS: {int(average_lucky_seven_damage[1] / attack_speed_modifier[attack_speed[1]])}, normal dex DPS: {int(average_lucky_seven_damage[2] / attack_speed_modifier[attack_speed[2]])}")
+
+# low dex is better until at least level 50 due to the Meba's crazy attack speed
+#   If possible, get 25 dex from gear so you can stay at 25 base dex since the Neva and Shinobi Bracer don't require dex
+# Low dex with Meba loses to normal starting at level 60; 
+#   transition to normal dex if you can't get a Neva or Shinobi Bracer
+# Low dex with Shinobi Bracer (or Neva) remains vastly superior to normal dex until level 100;
+#   start looking for dex gear in time to equip a Red Craven (or Purple Dragon Sleve if you are giga rich)
