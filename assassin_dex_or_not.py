@@ -31,15 +31,15 @@ two_crit_damage = [0, 0, 0]
 average_lucky_seven_damage = [0, 0, 0]
 
 for i in range(len(dex)):
-    lucky_seven_base_damage[i-1] = int((luk[i-1] * 5 * weapon_attack[i-1] / 100) * 1.5)
-    lucky_seven_damage[i-1] = lucky_seven_base_damage[i-1] * 2
+    lucky_seven_base_damage[i] = int((luk[i] * 5 * weapon_attack[i] / 100) * 1.5)
+    lucky_seven_damage[i] = lucky_seven_base_damage[i] * 2
 
     if level >= 80:
-        lucky_seven_damage[i-1] = lucky_seven_damage[i-1] * 1.5
+        lucky_seven_damage[i] = lucky_seven_damage[i] * 1.5
 
-    one_crit_damage[i-1] = lucky_seven_damage[i-1] * 3
-    two_crit_damage[i-1] = lucky_seven_damage[i-1] * 4
-    average_lucky_seven_damage[i-1] = (lucky_seven_damage[i-1] + 2 * one_crit_damage[i-1] + two_crit_damage[i-1]) / 4
+    one_crit_damage[i] = lucky_seven_damage[i] * 3
+    two_crit_damage[i] = lucky_seven_damage[i] * 4
+    average_lucky_seven_damage[i] = (lucky_seven_damage[i] + 2 * one_crit_damage[i] + two_crit_damage[i]) / 4
 
 # print results rounded down to nearest integer
 print(f"dexless lucky seven base damage: {int(lucky_seven_base_damage[0])}, low dex lucky seven base damage: {int(lucky_seven_base_damage[1])}, normal dex lucky seven base damage: {int(lucky_seven_base_damage[2])}")
@@ -53,7 +53,8 @@ print(f"dexless DPS: {int(average_lucky_seven_damage[0] / attack_speed_modifier[
 # Test Results:
 # low dex is better until at least level 70 due to the Meba's crazy attack speed
 #   If possible, get 25 dex from gear so you can stay at 25 base dex since the Neva and Shinobi Bracer don't require dex
-# Low dex with Meba loses to normal starting at level 70 with <20 attack stars, or level 80 with >= 20 attack stars; 
+# Low dex with Meba loses to normal starting at level 70 with <38 attack from stars, buffs, gloves and claw scrolls, or level 
+# 80 with >= 38 attack from stars, buffs, gloves and claw scrolls; 
 #   transition to normal dex if you can't get a Neva or Shinobi Bracer
 # Low dex with Shinobi Bracer (or Neva) remains vastly superior to normal dex until level 100;
 #   start looking for dex gear in time to equip a Red Craven (or Purple Dragon Sleve if you are giga rich)

@@ -28,11 +28,11 @@ two_crit_damage = [0, 0, 0]
 average_double_shot_damage = [0, 0, 0]
 
 for i in range(len(dex)):
-    base_damage[i-1] = int((dex[i-1] * 3.6 + str[i-1]) * weapon_attack[i-1] / 100)
-    double_shot_damage[i-1] = base_damage[i-1] * 2.6
-    one_crit_damage[i-1] = base_damage[i-1] * 3.6
-    two_crit_damage[i-1] = base_damage[i-1] * 4.6
-    average_double_shot_damage[i-1] = (double_shot_damage[i-1] + 2 * one_crit_damage[i-1] + two_crit_damage[i-1]) / 4
+    base_damage[i] = int((dex[i] * 3.6 + str[i]) * weapon_attack[i] / 100)
+    double_shot_damage[i] = base_damage[i] * 2.6
+    one_crit_damage[i] = base_damage[i] * 3.6
+    two_crit_damage[i] = base_damage[i] * 4.6
+    average_double_shot_damage[i] = (double_shot_damage[i] + 2 * one_crit_damage[i] + two_crit_damage[i]) / 4
 
 # print results rounded down to nearest integer
 print(f"strless base damage: {int(base_damage[0])}, low str base damage: {int(base_damage[1])}, normal str base damage: {int(base_damage[2])}")

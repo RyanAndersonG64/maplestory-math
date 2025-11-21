@@ -22,9 +22,9 @@ double_stab_damage = [0, 0]
 savage_blow_damage = [0, 0]
 
 for i in range(len(dex)):
-    base_damage[i-1] = int((luk[i-1] * 3.6 + dex[i-1] + 4) * weapon_attack[i-1] / 100)
-    double_stab_damage[i-1] = base_damage[i-1] * 2.6
-    savage_blow_damage[i-1] = base_damage[i-1] * 4.8
+    base_damage[i] = int((luk[i] * 3.6 + dex[i] + 4) * weapon_attack[i] / 100)
+    double_stab_damage[i] = base_damage[i] * 2.6
+    savage_blow_damage[i] = base_damage[i] * 4.8
 
 # print results rounded down to nearest integer
 print(f"dexless base damage: {int(base_damage[0])}, normal base damage: {int(base_damage[1])}")
