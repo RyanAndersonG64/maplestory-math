@@ -49,9 +49,15 @@ print(f"dexless two crit damage: {int(two_crit_damage[0])}, low dex two crit dam
 print(f"dexless average lucky seven damage: {int(average_lucky_seven_damage[0])}, low dex average lucky seven damage: {int(average_lucky_seven_damage[1])}, normal dex average lucky seven damage: {int(average_lucky_seven_damage[2])}")
 print(f"dexless DPS: {int(average_lucky_seven_damage[0] / attack_speed_modifier[attack_speed[0]])}, low dex DPS: {int(average_lucky_seven_damage[1] / attack_speed_modifier[attack_speed[1]])}, normal dex DPS: {int(average_lucky_seven_damage[2] / attack_speed_modifier[attack_speed[2]])}")
 
-# low dex is better until at least level 50 due to the Meba's crazy attack speed
+
+# Test Results:
+# low dex is better until at least level 70 due to the Meba's crazy attack speed
 #   If possible, get 25 dex from gear so you can stay at 25 base dex since the Neva and Shinobi Bracer don't require dex
-# Low dex with Meba loses to normal starting at level 60; 
+# Low dex with Meba loses to normal starting at level 70 with <20 attack stars, or level 80 with >= 20 attack stars; 
 #   transition to normal dex if you can't get a Neva or Shinobi Bracer
 # Low dex with Shinobi Bracer (or Neva) remains vastly superior to normal dex until level 100;
 #   start looking for dex gear in time to equip a Red Craven (or Purple Dragon Sleve if you are giga rich)
+# With ilbis, low dex remains superior forever, unless there's something about the math that i'm missing
+
+# Note: tests were done assuming 8 attack gloves, the highest level claw equippable at that level scrolled to + 10
+#   attack above average, and no other gear or buffs; booster was factored into attack speed from level 50+

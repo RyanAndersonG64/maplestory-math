@@ -42,4 +42,9 @@ print(f"strless two crit damage: {int(two_crit_damage[0])}, low str two crit dam
 print(f"strless average double shot damage: {int(average_double_shot_damage[0])}, low str average double shot damage: {int(average_double_shot_damage[1])}, normal str average double shot damage: {int(average_double_shot_damage[2])}")
 print(f"strless DPS: {int(average_double_shot_damage[0] / attack_speed_modifier[attack_speed[0]])}, low str DPS: {int(average_double_shot_damage[1] / attack_speed_modifier[attack_speed[1]])}, normal str DPS: {int(average_double_shot_damage[2] / attack_speed_modifier[attack_speed[2]])}")
 
+
+# Test Results:
 # low str is clearly not worth it due to the Fantasia server not having any strless/low str bowman weapons
+
+# Note: tests were done assuming 8 attack gloves, the highest level xbow equippable at that level scrolled to + 10
+#   attack above average(balanche and heckler for low str), and no other gear or buffs; booster was factored into attack speed from level 50+

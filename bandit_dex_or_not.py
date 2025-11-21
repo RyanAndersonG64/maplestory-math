@@ -33,6 +33,8 @@ print(f"dexless savage blow damage: {int(savage_blow_damage[0])}, normal savage 
 print(f"dexless double stab DPS: {int(double_stab_damage[0] / attack_speed_modifier[attack_speed[0]])}, normal double stab DPS: {int(double_stab_damage[1] / attack_speed_modifier[attack_speed[1]])}")
 print(f"dexless savage blow DPS: {int(savage_blow_damage[0] / attack_speed_modifier[attack_speed[0]])}, normal savage blow DPS: {int(savage_blow_damage[1] / attack_speed_modifier[attack_speed[1]])}")
 
+
+# Test Results:
 # Even without Maple weapons, dexless is clearly better on Fantasia as long as the player can
 # get their hands on a Plastic Bottle, Diamond Dagger, or Liu Bei Dagger, all of which are rare
 
